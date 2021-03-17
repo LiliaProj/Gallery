@@ -1,16 +1,16 @@
 export default function(){
-    let spanBurger = document.querySelector(".burger");
+    const spanBurger = document.querySelector(".burger");
     spanBurger.addEventListener('click', openMenu);
 }
 
-let nav = document.querySelector("nav");
-let spanLogo = document.querySelector("#logo_span");
-let ul = document.querySelector("#burger_ul");
+const nav = document.querySelector("nav");
+const spanLogo = document.querySelector("#logo_span");
+const ul = document.querySelector("#burger_ul");
 
-let openMenu = () => {
-    nav.classList.toggle("activ_burger");
+const openMenu = () => {
+    nav.classList.toggle("active_burger");
         
-    if(nav.classList.contains("activ_burger")){
+    if(nav.classList.contains("active_burger")){
         setTimeout(()=>{
             spanLogo.style.display = "inline";
             ul.style.display = "block";
