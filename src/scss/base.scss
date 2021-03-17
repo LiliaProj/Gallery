@@ -15,6 +15,13 @@ $pk: #fcd7d7;
 a{
     text-decoration: none;
 }
+h1{
+    text-align: center;
+    font-family: 'Redressed', cursive;
+    font-size: 100px;
+    color: $gr;
+    text-shadow:  0 0 5px $pk, 10px 10px 10px #414141;
+}
 
 //burger menu ↓
 nav{
@@ -22,6 +29,9 @@ nav{
     padding: 5px;
     z-index: 1;
     position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
     height: 100%;
     width: 50px;
     transition: width 200ms ease-out;
@@ -49,6 +59,7 @@ nav{
             text-align: center;
             text-transform: uppercase;
             padding: 10px;
+            font-weight: 300;
         }   
     }
 }
@@ -56,7 +67,7 @@ nav{
     cursor: pointer;
     span{
         width: 30px;
-        height: 5px;
+        height: 4px;
         background-color: $pk;
         border-radius: 5px;
         display: block;
@@ -73,7 +84,7 @@ nav{
     .burger{
         span{
             &:nth-child(1){
-                transform: translateY(10px) rotate(-45deg);
+                transform: translateY(9px) rotate(-45deg);
             }
             &:nth-child(2){
                 transform: rotate(45deg);
@@ -84,3 +95,6 @@ nav{
         }
     }
 }
+
+//accordion ↓
+
