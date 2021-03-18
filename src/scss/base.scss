@@ -2,9 +2,14 @@ $gr: #004d22;
 $pk: #fcd7d7;
 
 @mixin bg {
-    background-position: 50% 50%;
+    background-position: 30% 30%;
     background-repeat: no-repeat;
     background-size: cover;
+}
+@mixin animate {
+    top: 0;
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.5, -4, 0.5, 5);
 }
 
 *{
@@ -16,6 +21,7 @@ $pk: #fcd7d7;
 .container{
     max-width: 1170px;
     margin: auto;
+    padding: 10px 10px 10px 60px;
 }
 a{
     text-decoration: none;
@@ -26,6 +32,23 @@ h1{
     font-size: 100px;
     color: $gr;
     text-shadow:  0 0 5px $pk, 10px 10px 10px #414141;
+}
+main{
+    position: relative;
+    button{
+        position: absolute;
+        top: -85px;
+        left: 43%;
+        width: 200px;
+        height: 50px;
+        border-radius: 30px;
+        background-color: $gr;
+        font-weight: 700;
+        color: $pk;
+        text-transform: uppercase;
+        border: 10px solid #fcd7d78e;
+        cursor: pointer;
+    }
 }
 
 //burger menu ↓
@@ -108,32 +131,27 @@ header{
     width: 100%;
     overflow: hidden;
     padding-left: 50px;
-    @include bg;
-    background-image: url(../src/img/bg3.jpg);
+    // @include bg;
+    background-image: url(../src/img/bg6.jpg);
     .acc_section{
         flex: 1;
         height: 300px;
         transform: skewX(-30deg);
         position: relative;
         padding: 5px;
-        @include bg;
+        overflow: hidden;
+        img{
+            position: absolute;
+            height: 150%;
+            top: 0;
+            bottom: 0;
+            left: -25%;
+            right: -25%;
+            object-fit: cover;    
+            transform: skewX(30deg);              
+        }
         &:not(.acc_active){
             cursor: pointer;
-        }
-        &:nth-child(1){
-            background-image: url(../src/img/bg6.jpg);
-        }
-        &:nth-child(2){
-            background-image: url(../src/img/bg.jpg);
-        }
-        &:nth-child(3){
-            background-image: url(../src/img/bg4.jpg);
-        }
-        &:nth-child(4){
-            background-image: url(../src/img/bg2.jpg);
-        }
-        &:nth-child(5){
-            background-image: url(../src/img/bg5.jpg);
         }
         h2{
             text-align: left;
@@ -191,8 +209,11 @@ header{
     }
 }
 @media(max-width: 1000px){
-    header .acc_section, header .acc_active .acc_displ p, header .acc_active .acc_displ h3{
+    header .acc_section, header .acc_active .acc_displ p, header .acc_active .acc_displ h3, header .acc_section img{
         transform: none;
+    }
+    header .acc_section img{
+        height: 100%;
     }
     header .acc_active .acc_displ h3{
         padding-right: 0;
@@ -205,6 +226,13 @@ header{
 @media(max-width: 750px){
     h1{
         font-size: 70px;
+    }
+    main button{
+        width: 150px;
+        height: 35px;
+        top: -40px;
+        left: 40%;
+        border-width: 5px;
     }
     header{
         height: 250px;
@@ -238,5 +266,90 @@ header{
             position: absolute;
             bottom: 150px;
         }
+    }
+}
+
+//Animate gallery ↓
+#animate_gallery{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.img_container{
+    max-width: 750px;
+    height: 300px;
+    border: 5px solid $gr;
+    margin-bottom: 30px;
+    cursor: zoom-in;
+    &:nth-child(odd){
+        position: relative;
+        left: -40px;
+        top: -20px;
+        opacity: 0;
+    }
+    &:nth-child(3){
+        top: 20px;
+    }
+    &:nth-child(even){
+        position: relative;
+        right: -40px;
+        top: -20px;
+        margin-left: auto;
+        opacity: 0;
+    }
+    &:nth-child(4){
+        top: 20px;
+    }
+    img{
+        height: 100%;
+        width: 100%;
+        border: 5px solid $pk;
+        object-fit: cover;
+    }
+}
+.img_visible{
+    &:nth-child(odd){
+        left: 20px;
+        @include animate;
+    }
+    &:nth-child(even){
+        right: 20px;
+        @include animate;
+    }
+}
+.hidden_modal{
+    display: none;
+    img{
+        display: none;
+    }
+}
+.visible_modal{
+    display: block;
+    position: fixed;
+    cursor: zoom-out;
+    z-index: 2;
+    background-color: #00000083;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    img{
+        display: block;
+        margin: auto;
+        object-fit: cover;
+        width: 80%;
+        height: 80vh;
+        margin-top: 10vh;
+    }
+}
+@media(max-width:850px){
+    .img_container{
+        width: 450px;
+    }
+}
+@media(max-width:550px){
+    .img_container{
+        width: 300px;
+        height: 150px;
     }
 }

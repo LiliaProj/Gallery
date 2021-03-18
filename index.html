@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Redressed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <link rel="stylesheet" href="dist/main.css">
 </head>
 <body>
@@ -23,13 +22,14 @@
         <ul id="burger_ul">
             <li><a href="#accordion">Accordion</a></li>
             <li><a href="">Slider</a></li>
-            <li><a href="">Animate gallery</a></li>
+            <li><a href="#animate_gallery">Animate gallery</a></li>
             <li><a href="">Grid</a></li>
             <li><a href="">Form</a></li>
         </ul>
     </nav>
     <header id="accordion">
         <div class="acc_section">
+            <img src="src/img/bg6.jpg" alt="">
             <h2>Monsterra</h2>
             <div class="acc_displ">
                 <h3>Monstera</h3>
@@ -37,6 +37,7 @@
             </div>
         </div>
         <div class="acc_section">
+            <img src="src/img/bg.jpg" alt="">
             <h2>Yucca leaf</h2>
             <div class="acc_displ">
                 <h3>Yucca</h3>
@@ -44,6 +45,7 @@
             </div>
         </div>
         <div class="acc_section acc_active">
+            <img src="src/img/bg4.jpg" alt="">
             <h2>Ficus palm</h2>
             <div class="acc_displ">
                 <h3>Ficus</h3>
@@ -51,6 +53,7 @@
             </div>
         </div>
         <div class="acc_section">
+            <img src="src/img/bg2.jpg" alt="">
             <h2>Parlor palm</h2>
             <div class="acc_displ">
                 <h3>Palm</h3>
@@ -58,6 +61,7 @@
             </div>
         </div>
         <div class="acc_section">
+            <img src="src/img/bg5.jpg" alt="">
             <h2>Anthuriuum</h2>
             <div class="acc_displ">
                 <h3>Anthurium</h3>
@@ -65,12 +69,21 @@
             </div>
         </div>
     </header>
+    <div class="hidden_modal">
+        <img id="modal_img" src="" alt="">
+    </div>
     <main>
+        <button>Write to us</button>
         <h1>Gallery</h1>
+        <section class="container" id="animate_gallery">
+            <div class="img_container"><img title="Click me" src="src/img/photo10.jpg" alt=""></div>
+            <div class="img_container"><img title="Click me" src="src/img/photo11.jpg" alt=""></div>
+            <div class="img_container"><img title="Click me" src="src/img/photo12.jpg" alt=""></div>
+            <div class="img_container"><img title="Click me" src="src/img/photo13.jpg" alt=""></div>
+        </section>
     </main>
 
     <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script>
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
     <script type="text/javascript" src="dist/bundle.js"></script>
 </body>
 </html>
