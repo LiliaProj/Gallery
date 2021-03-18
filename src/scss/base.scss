@@ -49,6 +49,13 @@ main{
         border: 10px solid #fcd7d78e;
         cursor: pointer;
     }
+    h2{
+        font-size: 50px;
+        text-transform: uppercase;
+        color: $gr;
+        text-align: center;
+        padding: 30px 0;
+    }
 }
 
 //burger menu ↓
@@ -269,11 +276,17 @@ header{
     }
 }
 //Grid ↓
-#grid{
+.grid{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 250px;
     padding-left: 50px;
+    .fr3{
+        grid-row: span 3;
+    }
+    .fr2{
+        grid-column: span 2;
+    }
     & > div{
         position: relative;
         img{
@@ -290,9 +303,10 @@ header{
             background: linear-gradient(0deg, #fcd7d7 0%, #fcd7d700 100%);
             padding: 10px;
             height: 100%;
-            z-index: 1;
+            text-align: justify;
             p, a{
                 color: $gr;
+                line-height: 1;
             }
             .small_flex{
                 display: flex;
@@ -304,6 +318,36 @@ header{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+    }
+}
+@media(max-width: 850px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media(max-width: 630px){
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+        & > div:last-child{
+            grid-column: 2;
+            grid-row: 4;
+        }
+    }
+}
+@media(max-width: 430px){
+    .grid{
+        grid-template-columns: 1fr;
+        & > div:last-child{
+            grid-column: 1;
+            grid-row: 11;
+        }
+        .fr3{
+            grid-row: span 2;
+        }
+        .fr2{
+            grid-row: span 2;
+            grid-column: span 1;
         }
     }
 }
