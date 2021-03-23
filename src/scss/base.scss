@@ -46,12 +46,16 @@ h1{
 }
 main{
     position: relative;
-    button{
+    .write_to_us{
         position: absolute;
         top: -70px;
         left: 43%;
         width: 200px;
         height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px outset #4b4b4b;
         border-radius: 30px;
         background-color: $gr;
         font-weight: 700;
@@ -60,6 +64,7 @@ main{
         box-shadow: 0 0 0 10px #0000002c;
         cursor: pointer;
         &:hover{
+            font-size: 14px;
             border-style: inset;
             text-shadow: 0 0 5px #000;
         }
@@ -224,7 +229,7 @@ header{
                     bottom: 0;
                     width: 50px;
                     height: 2px;
-                    background-color: $gr;
+                    background: linear-gradient(90deg, #004d2154 0%, #004d22 50%, #004d2154 100%);
                 }
             }
         }
@@ -249,11 +254,15 @@ header{
     h1{
         font-size: 70px;
     }
-    main button{
+    main .write_to_us{
         width: 150px;
         height: 35px;
+        font-size: 14px;
         top: -40px;
         left: 40%;
+        &:hover{
+            font-size: 12px;
+        }
     }
     header{
         height: 250px;
@@ -479,7 +488,7 @@ header{
             content: " ";
             width: 150px;
             height: 2px;
-            background: linear-gradient(90deg, rgba(0,77,34,1) 0%, rgba(0,77,34,0) 100%);
+            background: linear-gradient(90deg, #004d22 0%, #004d2200 100%);
             position: absolute;
             left: 0;
             bottom: -10px;
@@ -489,7 +498,7 @@ header{
 .slider_item{
     display: none;
     height: 300px;
-    padding: 30px;
+    padding: 0 30px;
     img{
         flex: 1;
         object-fit: contain;
@@ -529,8 +538,85 @@ header{
     .slider_item{
         height: auto;
         flex-direction: column;
+        align-items: center;
+        img{
+            width: 60%;
+        }
     }
     .item_text h3{
         margin-top: 30px;
+    }
+}
+
+// Footer ↓
+
+footer{
+    background-image: url(../src/img/footer.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $pk;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    form{
+        display: flex;
+        flex: 3;
+        input, textarea{
+            border: 3px inset #4b4b4b;
+            border-radius: 10px;
+            background: #00000065;
+            padding: 3px 5px;
+            color: $pk;
+
+            &::placeholder{
+                color: $pk;
+                opacity: 0.5;
+                font-weight: 300;
+            }
+            &[type="submit"]{
+                border-style: outset;
+                color: $pk;
+                background: #a3a3a331;
+                &:hover{
+                    border-style: inset;
+                    background: #a3a3a310;
+                }
+
+            }
+        }
+        label, p{
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        fieldset{
+            border: none;
+            flex: 1;
+            &:last-child{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    }
+    .contacts{
+        flex: 1;
+        font-size: 18px;
+        p{
+            text-align: end;
+            padding: 10px;
+        }
+    }
+    .links{
+        flex: 1;
+        a{
+            display: block;
+            text-align: end;
+            font-size: 35px;
+            color: $pk;
+        }
     }
 }

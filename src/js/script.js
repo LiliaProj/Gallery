@@ -4,7 +4,7 @@ import animgallery from './animgallery.js';
 import fetchgrid from './fetchgrid.js';
 import slider from './slider.js';
 
-window.addEventListener('load', ()=>{
+window.addEventListener('load', () => {
     burger();
     accordion();
     animgallery();

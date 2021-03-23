@@ -11,11 +11,11 @@ export default function(){
     leftArrow.addEventListener('click', leftClick);
 }
 
-const rightClick = ()=>{
+const rightClick = () => {
     sliderItem[i].classList.remove("active_slider");
     pagination[i].classList.remove("active_pagination");
 
-    if(i+1<sliderItem.length){
+    if(i + 1 < sliderItem.length){
         i++;
     }
     else{
@@ -25,11 +25,11 @@ const rightClick = ()=>{
     sliderItem[i].classList.add("active_slider");
     pagination[i].classList.add("active_pagination");
 }
-const leftClick = ()=>{
+const leftClick = () => {
     sliderItem[i].classList.remove("active_slider");
     pagination[i].classList.remove("active_pagination");
 
-    if(i>0){
+    if(i > 0){
         i--;
     }
     else{

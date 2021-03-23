@@ -11,7 +11,7 @@ const openMenu = () => {
     nav.classList.toggle("active_burger");
         
     if(nav.classList.contains("active_burger")){
-        setTimeout(()=>{
+        setTimeout(() => {
             spanLogo.style.display = "inline";
             ul.style.display = "block";
         }, 150)

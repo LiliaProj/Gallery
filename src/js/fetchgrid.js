@@ -1,29 +1,29 @@
 export default function(){
     fetch("https://jsonplaceholder.typicode.com/comments")
-    .then((response) =>{
+    .then((response) => {
         return response.json();
     })
-    .then((data)=>{
+    .then((data) => {
         inpData(data);
     })
-    .catch((err)=>{
+    .catch((err) => {
         console.log("API has no access\n"+ err);
     });
 }
 
-const inpData = (data)=>{
+const inpData = (data) => {
     const namePost = document.querySelectorAll(".name");
     const mailPost = document.querySelectorAll(".mail");
     const bodyPost = document.querySelectorAll(".post");
 
-    namePost.forEach((item, key) =>{
+    namePost.forEach((item, key) => {
         item.innerHTML = data[key].name;
     });
-    mailPost.forEach((item, key) =>{
+    mailPost.forEach((item, key) => {
         item.innerHTML = data[key].email;
         item.href = `mailto:${data[key].email}`;
     });
-    bodyPost.forEach((item, key) =>{
+    bodyPost.forEach((item, key) => {
         for(let i=0; i<data[key].body.length; i++){
             if(i===0){
                 item.innerHTML = data[key].body[i].toUpperCase();

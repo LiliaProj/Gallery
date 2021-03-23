@@ -15,7 +15,7 @@ const visibilityOfGallery = () => {
     });
 }
 
-const modalOfGallery = () =>{
+const modalOfGallery = () => {
     const modal = document.querySelector(".hidden_modal");
     const modalImg = document.getElementById("modal_img");
 
@@ -26,7 +26,7 @@ const modalOfGallery = () =>{
         });
     });
 
-    modal.addEventListener('click', ()=>{
+    modal.addEventListener('click', () => {
         modal.classList.remove("visible_modal");
     });
 }

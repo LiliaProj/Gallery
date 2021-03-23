@@ -24,7 +24,7 @@
             <li><a href="#slider">Slider</a></li>
             <li><a href="#grid">Grid</a></li>
             <li><a href="#animate_gallery">Animate gallery</a></li>
-            <li><a href="">Form</a></li>
+            <li><a href="#footer">Form</a></li>
         </ul>
     </nav>
 
@@ -76,7 +76,7 @@
     </div>
 
     <main>
-        <button>Write to us</button>
+        <a href="#footer" class="write_to_us">Write to us</a>
         <h1>Gallery</h1>
         <section id="slider">
             <h2>Slider</h2>
@@ -204,6 +204,40 @@
             <div class="img_container"><img title="Click me" src="src/img/photo13.jpg" alt=""></div>
         </section>
     </main>
+    <footer id="footer">
+        <div class="container">
+            <form>
+                <fieldset>
+                    <p>Add your comment</p>
+                    <textarea maxlength="200" minlength="50" name="text_area" id="text_area" cols="30" rows="13" placeholder="Write your comment" required></textarea>
+                </fieldset>
+                <fieldset>
+                    <label for="name_inp">Name</label>
+                    <input type="text" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Enter your name" id="name_inp" required>
+                    <label for="surname_inp">Surname</label>
+                    <input type="text" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Enter your surname" id="surname_inp">
+                    <label for="email_inp">Email</label>
+                    <input type="email" id="email_inp" placeholder="Enter your email" required>
+                    <p class="aggrement">
+                        <input type="checkbox" required>
+                        I accept the aggrement for the processing of information
+                    </p>
+                    <input type="submit" value="Send message">
+                </fieldset>
+            </form>
+            <section class="contacts">
+                <p>+380683190364</p>
+                <p>Kyiv, Ukraine 2021</p>
+                <p>&copy;Liliia Potapenko</p>
+            </section>
+            <section class="links">
+                <a href=""><i class="fab fa-pinterest-p"></i></a>
+                <a href=""><i class="fab fa-telegram-plane"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+            </section>
+        </div>
+    </footer>
 
     <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script>
     <script type="text/javascript" src="dist/bundle.js"></script>
