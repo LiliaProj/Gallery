@@ -11,6 +11,16 @@ $pk: #fcd7d7;
     opacity: 1;
     transition: all 1s cubic-bezier(0.5, -4, 0.5, 5);
 }
+@mixin arrow {
+    position: absolute;
+    top: 50%;
+    color: $gr;
+    font-size: 50px;
+    cursor: pointer;
+    &:hover{
+        font-size: 60px;
+    }
+}
 
 *{
     box-sizing: border-box;
@@ -32,6 +42,7 @@ h1{
     font-size: 100px;
     color: $gr;
     text-shadow:  0 0 5px $pk, 10px 10px 10px #414141;
+    padding-left: 50px;
 }
 main{
     position: relative;
@@ -58,7 +69,7 @@ main{
         text-transform: uppercase;
         color: $gr;
         text-align: center;
-        padding: 30px 0;
+        padding: 30px 0 30px 50px;
     }
 }
 
@@ -260,9 +271,6 @@ header{
     }
 }
 @media(max-width: 550px){
-    h1{
-        font-size: 50px;
-    }
     header{
         height: 250px;
         .acc_active .acc_displ{
@@ -374,7 +382,7 @@ header{
     max-width: 750px;
     height: 300px;
     box-shadow: 0 0 0 10px #0000002c;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 30px;
     cursor: zoom-in;
     &:nth-child(odd){
@@ -400,8 +408,11 @@ header{
         height: 100%;
         width: 100%;
         border: 2px outset #8b8b8b;
-        border-radius: 5px;
+        border-radius: 10px;
         object-fit: cover;
+        &:hover{
+            border-style: inset;
+        }
     }
 }
 .img_visible{
@@ -452,3 +463,74 @@ header{
 }
 
 //Slider ↓
+
+.item_text{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $gr;
+    flex: 1.5;
+    h3{
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 20px;
+        &::after{
+            content: " ";
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(0,77,34,1) 0%, rgba(0,77,34,0) 100%);
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+        }
+    }
+}
+.slider_item{
+    display: none;
+    height: 300px;
+    padding: 30px;
+    img{
+        flex: 1;
+        object-fit: contain;
+    }
+}
+.active_slider{
+    display: flex;
+}
+#slider .container{
+    position: relative;
+    .fa-chevron-left{
+        @include arrow;
+        left: 60px;
+    }
+    .fa-chevron-right{
+        @include arrow;
+        right: 10px;
+    }
+}
+.flex_pagination{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    .pagination{
+        margin: 5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: $gr;
+    }
+    .active_pagination{
+        background-color: $pk;
+        border: 1px solid $gr;
+    }
+}
+@media(max-width:550px){
+    .slider_item{
+        height: auto;
+        flex-direction: column;
+    }
+    .item_text h3{
+        margin-top: 30px;
+    }
+}
