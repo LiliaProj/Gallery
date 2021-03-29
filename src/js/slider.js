@@ -2,7 +2,7 @@ const sliderItem = document.querySelectorAll(".slider_item");
 const pagination = document.querySelectorAll(".pagination");
 let i = 0;
 
-export default function(){
+export default function slider(){
     const leftArrow = document.querySelector(".fa-chevron-left");
     const rightArrow = document.querySelector(".fa-chevron-right");
 

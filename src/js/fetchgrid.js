@@ -1,4 +1,4 @@
-export default function(){
+export default function fetchgrid(){
     fetch("https://jsonplaceholder.typicode.com/comments")
     .then((response) => {
         return response.json();

@@ -1,4 +1,4 @@
-export default function(){
+export default function accordion(){
     const accordion = document.querySelectorAll(".acc_section");
     
     accordion.forEach(section => {

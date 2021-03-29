@@ -1,4 +1,4 @@
-export default function(){
+export default function burger(){
     const spanBurger = document.querySelector(".burger");
     spanBurger.addEventListener('click', openMenu);
 }

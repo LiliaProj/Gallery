@@ -9,7 +9,7 @@ $pk: #fcd7d7;
 @mixin animate {
     top: 0;
     opacity: 1;
-    transition: all 1s cubic-bezier(0.5, -4, 0.5, 5);
+    transition: top 1s cubic-bezier(0.5, -3, 0.5, 4), left 1s cubic-bezier(0.5, -4, 0.5, 5), right 1s cubic-bezier(0.5, -4, 0.5, 5);
 }
 @mixin arrow {
     position: absolute;
@@ -75,6 +75,9 @@ main{
         color: $gr;
         text-align: center;
         padding: 30px 0 30px 50px;
+    }
+    .container h2{
+        padding-left: 0;
     }
 }
 
@@ -294,6 +297,9 @@ header{
             bottom: 150px;
         }
     }
+    main h2{
+        font-size: 35px;
+    }
 }
 //Grid ↓
 .grid{
@@ -383,15 +389,21 @@ header{
 
 //Animate gallery ↓
 #animate_gallery{
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    background: linear-gradient(0deg, #004d2200 0%, #004d22 100%);
+    h2{
+        color: $pk;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
 }
 .img_container{
     max-width: 750px;
     height: 300px;
     box-shadow: 0 0 0 10px #0000002c;
-    border-radius: 10px;
+    // border-radius: 10px;
     margin-bottom: 30px;
     cursor: zoom-in;
     &:nth-child(odd){
@@ -417,7 +429,7 @@ header{
         height: 100%;
         width: 100%;
         border: 2px outset #8b8b8b;
-        border-radius: 10px;
+        // border-radius: 10px;
         object-fit: cover;
         &:hover{
             border-style: inset;
@@ -552,10 +564,12 @@ header{
 
 footer{
     background-image: url(../src/img/footer.jpg);
+    box-shadow: 0 0 18px 6px #000000a8;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     color: $pk;
+    text-shadow: 0 0 2px #000;
     .container{
         display: flex;
         justify-content: space-between;
@@ -564,6 +578,13 @@ footer{
     form{
         display: flex;
         flex: 3;
+        .warming{
+            display: none;
+            color: red;
+            span{
+                text-shadow: 0 0 3px #ffc0c0;
+            }
+        }
         input, textarea{
             border: 3px inset #4b4b4b;
             border-radius: 10px;
@@ -603,6 +624,10 @@ footer{
         }
     }
     .contacts{
+        display: flex;
+        flex: 2;
+    }
+    .my_contacts{
         flex: 1;
         font-size: 18px;
         p{
@@ -618,5 +643,78 @@ footer{
             font-size: 35px;
             color: $pk;
         }
+    }
+}
+@media(max-width:930px){
+    footer .container{
+        flex-direction: column;
+    }
+}
+@media(max-width:560px){
+    footer form{
+        flex-direction: column;
+        textarea{
+            width: 100%;
+        }
+    }
+}
+#comments{
+    display: none;
+    .box_item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 2px solid #004d2138;
+        padding: 10px;
+        p{
+            color: $gr;
+        }
+        .close_button{
+            cursor: pointer;
+            background-color: $gr;
+            width: 25px;
+            height: 25px;
+            font-size: 20px;
+            color: $pk;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .comm_icon{
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background-color: $gr;
+            color: $pk;
+            text-transform: uppercase;
+            font-size: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .comm_text{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0 10px;
+            width: calc(100% - 60px);
+
+            .comm_head{
+                display: flex;
+                justify-content: space-between;
+                font-weight: 700;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+@media(max-width:400px){
+    .comm_email{
+        order: 1;
+        width: 100%;
+    }
+    .comm_head{
+        flex-wrap: wrap;
     }
 }
