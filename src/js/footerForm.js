@@ -102,9 +102,9 @@ const removeComments = () => {
                 let confirm = window.confirm("Are you sure, that you want to delete this comment?");
                 
                 if(confirm){
-                    item.style.display = "none";
                     let removeKey = item.dataset.commentNumber;
                     sessionStorage.removeItem(removeKey);
+                    item.remove();
 
                     if(sessionStorage.length === 0){
                         const allSection = document.querySelector("#comments");
